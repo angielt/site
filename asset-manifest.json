@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/react-test/static/css/main.b100e6da.chunk.css",
-    "main.js": "/react-test/static/js/main.c18f7d28.chunk.js",
-    "main.js.map": "/react-test/static/js/main.c18f7d28.chunk.js.map",
+    "main.css": "/react-test/static/css/main.d7626656.chunk.css",
+    "main.js": "/react-test/static/js/main.bcf16d1c.chunk.js",
+    "main.js.map": "/react-test/static/js/main.bcf16d1c.chunk.js.map",
     "runtime-main.js": "/react-test/static/js/runtime-main.bc7bf75b.js",
     "runtime-main.js.map": "/react-test/static/js/runtime-main.bc7bf75b.js.map",
     "static/js/2.de578441.chunk.js": "/react-test/static/js/2.de578441.chunk.js",
     "static/js/2.de578441.chunk.js.map": "/react-test/static/js/2.de578441.chunk.js.map",
     "index.html": "/react-test/index.html",
-    "precache-manifest.ad679cc07e58fb9b8775e994bb88402f.js": "/react-test/precache-manifest.ad679cc07e58fb9b8775e994bb88402f.js",
+    "precache-manifest.71f896ec63d36e402b2dcfe05984bc3c.js": "/react-test/precache-manifest.71f896ec63d36e402b2dcfe05984bc3c.js",
     "service-worker.js": "/react-test/service-worker.js",
-    "static/css/main.b100e6da.chunk.css.map": "/react-test/static/css/main.b100e6da.chunk.css.map",
+    "static/css/main.d7626656.chunk.css.map": "/react-test/static/css/main.d7626656.chunk.css.map",
+    "static/media/App.css": "/react-test/static/media/geordanna-cordero-fields-5NE6mX0WVfQ-unsplash.0a043ee5.jpg",
     "static/media/logo.svg": "/react-test/static/media/logo.25bf045c.svg"
   }
 }
