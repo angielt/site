@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-test/static/css/main.1c252f1c.chunk.css",
-    "main.js": "/react-test/static/js/main.ad1437ba.chunk.js",
-    "main.js.map": "/react-test/static/js/main.ad1437ba.chunk.js.map",
+    "main.css": "/react-test/static/css/main.71aefaae.chunk.css",
+    "main.js": "/react-test/static/js/main.12bf2503.chunk.js",
+    "main.js.map": "/react-test/static/js/main.12bf2503.chunk.js.map",
     "runtime-main.js": "/react-test/static/js/runtime-main.bc7bf75b.js",
     "runtime-main.js.map": "/react-test/static/js/runtime-main.bc7bf75b.js.map",
-    "static/js/2.8dcdc37c.chunk.js": "/react-test/static/js/2.8dcdc37c.chunk.js",
-    "static/js/2.8dcdc37c.chunk.js.map": "/react-test/static/js/2.8dcdc37c.chunk.js.map",
+    "static/js/2.e0473902.chunk.js": "/react-test/static/js/2.e0473902.chunk.js",
+    "static/js/2.e0473902.chunk.js.map": "/react-test/static/js/2.e0473902.chunk.js.map",
     "index.html": "/react-test/index.html",
-    "precache-manifest.286b5baad92798ba9dd1034c64b5ce23.js": "/react-test/precache-manifest.286b5baad92798ba9dd1034c64b5ce23.js",
+    "precache-manifest.214f1c76a310913f833cdf882808e45d.js": "/react-test/precache-manifest.214f1c76a310913f833cdf882808e45d.js",
     "service-worker.js": "/react-test/service-worker.js",
-    "static/css/main.1c252f1c.chunk.css.map": "/react-test/static/css/main.1c252f1c.chunk.css.map",
+    "static/css/main.71aefaae.chunk.css.map": "/react-test/static/css/main.71aefaae.chunk.css.map",
     "static/media/App.css": "/react-test/static/media/geordanna-cordero-fields-5NE6mX0WVfQ-unsplash.0a043ee5.jpg",
     "static/media/logo.svg": "/react-test/static/media/logo.25bf045c.svg"
   }
