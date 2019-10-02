@@ -37,6 +37,36 @@ body{
   text-align: center;
   min-height: 100vh;
   flex-wrap: wrap;
+  opacity: 0;
+  transition: opacity 2s;
+}
+#content.hide{
+  opacity: 0;
+  pointer-events:none;
+}
+
+#button_group{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.detail_btn{
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  background-color: white;
+  color: gray;
+  border: 2px solid #e7e7e7;
+  transition-duration: 0.4s;
+  float:right;
+}
+.detail_btn:hover {
+  background-color:  #e7e7e7;
+  color: white;
 }
 
 .item.left{
@@ -45,7 +75,6 @@ body{
   border:10px;
   background-color: white;
   max-width: 300px;
-
 }
 
 .item.right{
@@ -53,13 +82,25 @@ body{
   margin:10px;
   padding: 10px;
   border: 10px;
-  background-color: white;
+
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  margin:10px;
 }
 
 .Content{
+  padding: 10px;
+  border:10px;
+  background-color: white;
+}
+.card{
   margin:10px;
   padding: 10px;
   border:10px;
   margin-left:10px;
-  background-color: white;
+}
+.card-text{
+  text-align:left;
 }
