@@ -37,12 +37,8 @@ body{
   text-align: center;
   min-height: 100vh;
   flex-wrap: wrap;
-  opacity: 0;
-  transition: opacity 2s;
-}
-#content.hide{
-  opacity: 0;
-  pointer-events:none;
+  /* opacity: 0;
+  transition: opacity 2s; */
 }
 
 #button_group{

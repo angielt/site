@@ -55,7 +55,7 @@ class Content extends React.Component {
 class Home extends React.Component{
   render(){
     return (
-      <div className="Content">
+      <div className="Content" onload="document.body.style.opacity='1'">
         <div className="card">
           <div className="card-body">
           <h4 className="card-title">Who am I?</h4>
@@ -88,7 +88,7 @@ class Home extends React.Component{
 class Contact extends React.Component{
   render(){
     return (
-      <div className="Content">
+      <div className="Content" onload="document.body.style.opacity='1'">
         <div className="card">
           <div className="card-body">
           <h4 className="card-title">Contact Me</h4>
