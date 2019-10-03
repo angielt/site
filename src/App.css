@@ -37,8 +37,6 @@ body{
   text-align: center;
   min-height: 100vh;
   flex-wrap: wrap;
-  /* opacity: 0;
-  transition: opacity 2s; */
 }
 
 #button_group{
@@ -57,7 +55,7 @@ body{
   background-color: white;
   color: gray;
   border: 2px solid #e7e7e7;
-  transition-duration: 0.4s;
+  transition-duration: 0.6s;
   float:right;
 }
 .detail_btn:hover {
@@ -74,6 +72,7 @@ body{
 }
 
 .item.right{
+  min-width: 600px;
   max-width: 600px;
   margin:10px;
   padding: 10px;
