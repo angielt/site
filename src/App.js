@@ -29,7 +29,7 @@ class RightPage extends React.Component {
     return(
       <div id="root">
       <div id="button_group">
-        <button type="button" className="detail_btn" onClick={this.language} >語言</button>
+        <button type="button" className="detail_btn" onClick={this.language} title="coming soon，請等一下" >語言</button>
         <button type="button" className="detail_btn" onClick={this.contact}>Contact</button>
         <button type="button" className="detail_btn" onClick={this.project} >Project Details</button>
         <button type="button" className="detail_btn" onClick={this.game}>Game</button>
