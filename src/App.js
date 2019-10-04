@@ -9,11 +9,17 @@ class RightPage extends React.Component {
     this.language = this.language.bind(this);
     this.project = this.project.bind(this);
     this.game = this.game.bind(this);
-    this.state = {tab:0}
+    this.state = {tab:0,language:'english'}
   }
 
   language(){
       this.setState({tab:1});
+      if(this.state.language == 'english'){
+          this.setState({language:'chinese'})
+      }
+      else if(this.state.language == 'chinese') {
+          this.setState({language:'english'})
+      }
   }
   contact(){
       this.setState({tab:2});
@@ -32,9 +38,9 @@ class RightPage extends React.Component {
         <button type="button" className="detail_btn" onClick={this.language} title="coming soon，請等一下" >語言</button>
         <button type="button" className="detail_btn" onClick={this.contact}>Contact</button>
         <button type="button" className="detail_btn" onClick={this.project} >Project Details</button>
-        <button type="button" className="detail_btn" onClick={this.game}>Game</button>
+        <button type="button" className="detail_btn" onClick={this.game}>Game Dev</button>
       </div>
-          <Content curTab={this.state.tab}/>
+          <Content curTab={this.state.tab} curLanguage={this.state.language}/>
       </div>
     )
   }
@@ -46,7 +52,7 @@ class Content extends React.Component {
     let content;
 
     if(this.props.curTab==0 ||this.props.curTab==1){
-      content = <Home />
+      content = <Home curLanguage={this.props.curLanguage}/>
     }
     else if(this.props.curTab==2){
       content = <Contact />
@@ -67,14 +73,23 @@ class Content extends React.Component {
 
 class Home extends React.Component{
   render(){
+    var index;
+    var title = {'english':['Who am I?'],
+                 'chinese':['我是誰？']}
+    var description = {'english':['My name is Angie Ta. I am a web/iOS developer and recent graduate from the University of California, Davis.','Some of my passions are:'],
+                      'chinese':['你好，我叫Angie Ta。我是web/iOS developer.正在在加州大學戴维斯畢業了。情看我的網站。','你好']
+                      }
+
+
+    if(this.props.curLanguage=="chinese"){
+    }
     return (
       <div className="Content" onload="this.style.opacity='1">
         <div className="card">
           <div className="card-body">
-          <h4 className="card-title">Who am I?</h4>
+          <h4 className="card-title">{title[this.props.curLanguage]}</h4>
           <p className="card-text">
-          My name is Angie Ta, and I am a web/iOS developer and recent graduate from
-          the University of California, Davis. <br></br>
+          {description[this.props.curLanguage][0]} <br></br>
           Some of my passions are:
           </p>
           <li>React/ReactNative</li>
@@ -127,7 +142,7 @@ class Project extends React.Component{
           <p className="card-text">
             PocketOphtho
           </p>
-          <img src="images/ophth.png" height="42" width="42"></img>
+          <img src="images/ophth.png" height="70" width="70"></img>
           <div>
           <ul> Developed closely with members of the UC Davis School of Medicine and UC Davis Eye Center.  </ul>
           <ul> PocketOphtho is an interactive ophthalmology review app designed
@@ -135,6 +150,21 @@ class Project extends React.Component{
           the use of spaced repetition, a learning technique that takes advantage
           of the psychological spacing effect, PocketOphtho aims to be the new
           standard for clinical review apps. </ul>
+          <img border="0" alt="github" src="images/UCDavisHealth.svg" height="30" width="70"></img>
+          </div>
+          <p className="card-text">
+            Google CSSI MTV
+          </p>
+          <div>
+          <a href="www.stage-bright.appspot.com">
+          Demo
+          </a>
+          <ul> Created several small projects in Python, HTML and CSS that were
+          used to create the resource pages and establish the teleprompter on
+          stage-bright.appspot.com, a web app that anyone, especially children,
+          can use to improve their public speaking and presentation skills.
+          The web app utilizes voice recognition APIs that produces a scrolling
+          teleprompter and includes a library of linked YouTube videos and articles.  </ul>
           </div>
           </div>
         </div>

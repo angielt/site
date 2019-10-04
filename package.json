@@ -2,7 +2,7 @@
   "name": "angielt",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://angielt.github.io/react-test",
+  "homepage": "http://angielt.github.io",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "react": "^16.10.1",
