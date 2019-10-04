@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/site/static/css/main.6df43e36.chunk.css",
-    "main.js": "/site/static/js/main.2346d3ec.chunk.js",
-    "main.js.map": "/site/static/js/main.2346d3ec.chunk.js.map",
+    "main.css": "/site/static/css/main.519b72d5.chunk.css",
+    "main.js": "/site/static/js/main.4c0efd35.chunk.js",
+    "main.js.map": "/site/static/js/main.4c0efd35.chunk.js.map",
     "runtime-main.js": "/site/static/js/runtime-main.ed326351.js",
     "runtime-main.js.map": "/site/static/js/runtime-main.ed326351.js.map",
     "static/js/2.e0473902.chunk.js": "/site/static/js/2.e0473902.chunk.js",
     "static/js/2.e0473902.chunk.js.map": "/site/static/js/2.e0473902.chunk.js.map",
     "index.html": "/site/index.html",
-    "precache-manifest.e60bf6a8b002c14c67651ef0546c37cb.js": "/site/precache-manifest.e60bf6a8b002c14c67651ef0546c37cb.js",
+    "precache-manifest.1f8acf0009a78ce95ad3c04c3853622c.js": "/site/precache-manifest.1f8acf0009a78ce95ad3c04c3853622c.js",
     "service-worker.js": "/site/service-worker.js",
-    "static/css/main.6df43e36.chunk.css.map": "/site/static/css/main.6df43e36.chunk.css.map",
+    "static/css/main.519b72d5.chunk.css.map": "/site/static/css/main.519b72d5.chunk.css.map",
     "static/media/App.css": "/site/static/media/geordanna-cordero-fields-5NE6mX0WVfQ-unsplash.0a043ee5.jpg",
     "static/media/logo.svg": "/site/static/media/logo.25bf045c.svg"
   }
