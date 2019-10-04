@@ -20,6 +20,14 @@
   color: #09d3ac;
 }
 
+.fade-in {
+    opacity: 0;
+}
+.fade-in.visible {
+    transition: opacity 1s ease-in;
+    opacity: 1;
+}
+
 body{
   font-family: 'Raleway', sans-serif;
   background-image: url("images/background/geordanna-cordero-fields-5NE6mX0WVfQ-unsplash.jpg");

@@ -5,21 +5,24 @@ import './App.css';
 class RightPage extends React.Component {
   constructor(props){
     super(props);
-    this.contact = this.contact.bind(this);
     this.language = this.language.bind(this);
+    this.about = this.about.bind(this);
+    this.contact = this.contact.bind(this);
     this.project = this.project.bind(this);
     this.game = this.game.bind(this);
     this.state = {tab:0,language:'english'}
   }
 
   language(){
-      this.setState({tab:1});
       if(this.state.language == 'english'){
           this.setState({language:'chinese'})
       }
       else if(this.state.language == 'chinese') {
           this.setState({language:'english'})
       }
+  }
+  about(){
+      this.setState({tab:1});
   }
   contact(){
       this.setState({tab:2});
@@ -35,10 +38,11 @@ class RightPage extends React.Component {
     return(
       <div id="root">
       <div id="button_group">
-        <button type="button" className="detail_btn" onClick={this.language} title="coming soon，請等一下" >語言</button>
-        <button type="button" className="detail_btn" onClick={this.contact}>Contact</button>
-        <button type="button" className="detail_btn" onClick={this.project} >Project Details</button>
-        <button type="button" className="detail_btn" onClick={this.game}>Game Dev</button>
+        <button type="button" className="detail_btn" id="0" onClick={this.language} title="coming soon，請等一下" >語言</button>
+        <button type="button" className="detail_btn" id="1" onClick={this.about} >About</button>
+        <button type="button" className="detail_btn" id="2" onClick={this.contact}>Contact</button>
+        <button type="button" className="detail_btn" id="3" onClick={this.project} >Project Details</button>
+        <button type="button" className="detail_btn" id="4" onClick={this.game}>Game Dev</button>
       </div>
           <Content curTab={this.state.tab} curLanguage={this.state.language}/>
       </div>
@@ -52,16 +56,16 @@ class Content extends React.Component {
     let content;
 
     if(this.props.curTab==0 ||this.props.curTab==1){
-      content = <Home curLanguage={this.props.curLanguage}/>
+      content = <About curLanguage={this.props.curLanguage}/>
     }
     else if(this.props.curTab==2){
-      content = <Contact />
+      content = <Contact curLanguage={this.props.curLanguage}/>
     }
     else if(this.props.curTab==3){
-      content = <Project />
+      content = <Project curLanguage={this.props.curLanguage}/>
     }
     else if(this.props.curTab==4){
-      content = <Game />
+      content = <Game curLanguage={this.props.curLanguage}/>
     }
     return (
       <div>
@@ -71,18 +75,18 @@ class Content extends React.Component {
   }
 }
 
-class Home extends React.Component{
+class About extends React.Component{
+
   render(){
-    var index;
-    var title = {'english':['Who am I?'],
+    var title = {'english':['About'],
                  'chinese':['我是誰？']}
     var description = {'english':['My name is Angie Ta. I am a web/iOS developer and recent graduate from the University of California, Davis.','Some of my passions are:'],
-                      'chinese':['你好，我叫Angie Ta。我是web/iOS developer.正在在加州大學戴维斯畢業了。情看我的網站。','你好']
+                      'chinese':['你好，我叫Angie Ta。我是web/iOS developer.正在在加州大學戴维斯畢業了。情看我的網站。','我的一些興趣是:']
+                      }
+    var projects = {'english':['Projects and Experience'],
+                      'chinese':['項目']
                       }
 
-
-    if(this.props.curLanguage=="chinese"){
-    }
     return (
       <div className="Content" onload="this.style.opacity='1">
         <div className="card">
@@ -90,7 +94,7 @@ class Home extends React.Component{
           <h4 className="card-title">{title[this.props.curLanguage]}</h4>
           <p className="card-text">
           {description[this.props.curLanguage][0]} <br></br>
-          Some of my passions are:
+          {description[this.props.curLanguage][1]}
           </p>
           <li>React/ReactNative</li>
           <li>CS in Medicine</li>
@@ -100,7 +104,7 @@ class Home extends React.Component{
           </div>
         </div>
         <div className="card">
-          <h4 className="card-title">Projects and Experience</h4>
+          <h4 className="card-title">{projects[this.props.curLanguage][0]}</h4>
           <div className="card-body">
           <p className="card-text">PocketOphtho
           </p>
@@ -115,13 +119,17 @@ class Home extends React.Component{
 
 class Contact extends React.Component{
   render(){
+    var contact = {'english':'Contact Me',
+                 'chinese':'聯繫方式'}
+    var info = {'english':'I would love to chat! Reach me at:',
+                'chinese':'想跟我講的話請用:'}
     return (
       <div className="Content" onload="document.body.style.opacity='1'">
         <div className="card">
           <div className="card-body">
-          <h4 className="card-title">Contact Me</h4>
+          <h4 className="card-title">{contact[this.props.curLanguage]}</h4>
           <p className="card-text">
-            I would love to chat! Reach out to me @:
+            {info[this.props.curLanguage]}
           </p>
           <ul> angielisata@gmail.com</ul>
           <ul> or on social media</ul>
