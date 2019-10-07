@@ -88,7 +88,7 @@ class About extends React.Component{
                       }
 
     return (
-      <div className="Content" onload="this.style.opacity='1">
+      <div className="Content" onLoad="this.style.opacity='1">
         <div className="card">
           <div className="card-body">
           <h4 className="card-title">{title[this.props.curLanguage]}</h4>
@@ -124,7 +124,7 @@ class Contact extends React.Component{
     var info = {'english':'I would love to chat! Reach me at:',
                 'chinese':'想跟我講的話請用:'}
     return (
-      <div className="Content" onload="document.body.style.opacity='1'">
+      <div className="Content" onLoad="document.body.style.opacity='1'">
         <div className="card">
           <div className="card-body">
           <h4 className="card-title">{contact[this.props.curLanguage]}</h4>
@@ -143,7 +143,7 @@ class Contact extends React.Component{
 class Project extends React.Component{
   render(){
     return (
-      <div className="Content" onload="document.body.style.opacity='1'">
+      <div className="Content" onLoad="document.body.style.opacity='1'">
         <div className="card">
           <div className="card-body">
           <h4 className="card-title">Recent Projects:</h4>
@@ -184,7 +184,7 @@ class Project extends React.Component{
 class Game extends React.Component{
   render(){
     return (
-      <div className="Content" onload="document.body.style.opacity='1'">
+      <div className="Content" onLoad="document.body.style.opacity='1'">
         <div className="card">
           <div className="card-body">
           <h4 className="card-title">Recent Projects:</h4>
