@@ -46,6 +46,10 @@ h1{
   font-weight: bold;
 }
 
+#side_text{
+  margin: 0px;
+  font-size: 15px;
+}
 
 
 @media screen and (max-width: 1400px) {
