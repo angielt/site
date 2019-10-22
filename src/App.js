@@ -103,15 +103,6 @@ class About extends React.Component{
           <li>Game Dev/Game Art</li>
           </div>
         </div>
-        // <div className="card">
-        //   <h4 className="card-title">{projects[this.props.curLanguage][0]}</h4>
-        //   <div className="card-body">
-        //   <p className="card-text">PocketOphtho
-        //   </p>
-        //   <p className="card-text">Google CSSI 2015 MTV
-        //   </p>
-        //   </div>
-        // </div>
       </div>
     )
   }
