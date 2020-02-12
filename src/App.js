@@ -1,75 +1,62 @@
 import React from 'react';
+import * as Scroll from 'react-scroll';
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import logo from './logo.svg';
 import './App.css';
 
 class RightPage extends React.Component {
   constructor(props){
     super(props);
-    this.language = this.language.bind(this);
-    this.about = this.about.bind(this);
-    this.contact = this.contact.bind(this);
-    this.project = this.project.bind(this);
-    this.game = this.game.bind(this);
+    this.elements = []
     this.state = {tab:0,language:'english'}
+    this.addElement = this.addElement.bind(this)
+    this.about = this.about.bind(this)
   }
 
-  language(){
-      if(this.state.language == 'english'){
-          this.setState({language:'chinese'})
-      }
-      else if(this.state.language == 'chinese') {
-          this.setState({language:'english'})
-      }
+  addElement(element){
+    this.elements.push(element)
   }
   about(){
-      this.setState({tab:1});
-  }
-  contact(){
-      this.setState({tab:2});
+    var scroll = Scroll.animateScroll;
+    scroll.scrollTo(100);
   }
   project(){
-      this.setState({tab:3});
+    var scroll = Scroll.animateScroll;
+    scroll.scrollTo(400);
   }
   game(){
-      this.setState({tab:4});
+    var scroll = Scroll.animateScroll;
+    scroll.scrollTo(800);
   }
 
   render(){
     return(
       <div id="root">
       <div id="button_group">
-        <button type="button" className="detail_btn" id="0" onClick={this.language} title="coming soon，請等一下" >語言</button>
         <button type="button" className="detail_btn" id="1" onClick={this.about} >About</button>
-        <button type="button" className="detail_btn" id="2" onClick={this.contact}>Contact</button>
         <button type="button" className="detail_btn" id="3" onClick={this.project} >Project Details</button>
         <button type="button" className="detail_btn" id="4" onClick={this.game}>Game Dev</button>
       </div>
-          <Content curTab={this.state.tab} curLanguage={this.state.language}/>
+          <Home addElement={this.addElement} />
       </div>
     )
   }
 }
 
 
-class Content extends React.Component {
+class Home extends React.Component{
   render(){
-    let content;
+    var ScrollLink = Scroll.ScrollLink;
+    var ScrollElement = Scroll.ScrollElement;
+    let Element = <Game />
+    this.props.addElement(Element)
 
-    if(this.props.curTab==0 ||this.props.curTab==1){
-      content = <About curLanguage={this.props.curLanguage}/>
-    }
-    else if(this.props.curTab==2){
-      content = <Contact curLanguage={this.props.curLanguage}/>
-    }
-    else if(this.props.curTab==3){
-      content = <Project curLanguage={this.props.curLanguage}/>
-    }
-    else if(this.props.curTab==4){
-      content = <Game curLanguage={this.props.curLanguage}/>
-    }
     return (
-      <div>
-      {content}
+      <div id="Home">
+        <About />
+        <Project />
+        {Element}
+
       </div>
     )
   }
@@ -78,6 +65,7 @@ class Content extends React.Component {
 class About extends React.Component{
 
   render(){
+
     var title = {'english':['About'],
                  'chinese':['我是誰？']}
     var description = {'english':['My name is Angie Ta. I am a web/iOS developer and recent graduate from the University of California, Davis.','Some of my passions are:'],
@@ -87,14 +75,15 @@ class About extends React.Component{
                       'chinese':['項目']
                       }
 
-    return (
-      <div className="Content" onLoad="this.style.opacity='1">
+
+    return(
+      <div className="Content" id="About" onLoad="this.style.opacity='1" >
         <div className="card">
           <div className="card-body">
-          <h4 className="card-title">{title[this.props.curLanguage]}</h4>
+          <h4 className="card-title">About</h4>
           <p className="card-text">
-          {description[this.props.curLanguage][0]} <br></br>
-          {description[this.props.curLanguage][1]}
+          My name is Angie Ta. I am a web/iOS developer and recent graduate from the University of California, Davis. <br></br>
+          Some of my passions are:
           </p>
           <li>React/ReactNative</li>
           <li>CS in Medicine</li>
@@ -115,7 +104,7 @@ class Contact extends React.Component{
     var info = {'english':'I would love to chat! Reach me at:',
                 'chinese':'想跟我講的話請用:'}
     return (
-      <div className="Content" onLoad="document.body.style.opacity='1'">
+      <div className="Content" id="Contact" onLoad="document.body.style.opacity='1'">
         <div className="card">
           <div className="card-body">
           <h4 className="card-title">{contact[this.props.curLanguage]}</h4>
@@ -134,7 +123,7 @@ class Contact extends React.Component{
 class Project extends React.Component{
   render(){
     return (
-      <div className="Content" onLoad="document.body.style.opacity='1'">
+      <div className="Content" id="Content" onLoad="document.body.style.opacity='1'">
         <div className="card">
           <div className="card-body">
           <h4 className="card-title">Recent Projects:</h4>
@@ -175,7 +164,7 @@ class Project extends React.Component{
 class Game extends React.Component{
   render(){
     return (
-      <div className="Content" onLoad="document.body.style.opacity='1'">
+      <div className="Content" id="Game" onLoad="document.body.style.opacity='1'">
         <div className="card">
           <div className="card-body">
           <h4 className="card-title">Recent Projects:</h4>

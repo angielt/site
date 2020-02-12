@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 .App {
   text-align: center;
 }
@@ -78,6 +83,12 @@ body{
   border:10px;
   background-color: white;
   max-width: 300px;
+
+}
+
+.float-left{
+  align-self: baseline;
+  padding-top: 100px;
 }
 
 .item.right{
