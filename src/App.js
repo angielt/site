@@ -78,9 +78,9 @@ class About extends React.Component{
 
     return(
       <div className="Content" id="About" onLoad="this.style.opacity='1" >
+      <h3 className="content-title">About</h3>
         <div className="card">
           <div className="card-body">
-          <h4 className="card-title">About</h4>
           <p className="card-text">
           My name is Angie Ta. I am a web/iOS developer and recent graduate from the University of California, Davis. <br></br>
           Some of my passions are:
@@ -124,38 +124,40 @@ class Project extends React.Component{
   render(){
     return (
       <div className="Content" id="Content" onLoad="document.body.style.opacity='1'">
+      <h3 className="content-title">Recent Projects:</h3>
+
         <div className="card">
-          <div className="card-body">
-          <h4 className="card-title">Recent Projects:</h4>
-          <p className="card-text">
-            PocketOphtho
-          </p>
-          <img src="images/ophth.png" height="70" width="70"></img>
-          <div>
-          <ul> Developed closely with members of the UC Davis School of Medicine and UC Davis Eye Center.  </ul>
-          <ul> PocketOphtho is an interactive ophthalmology review app designed
-          for residents and fellows preparing for OKAPs and written boards. With
-          the use of spaced repetition, a learning technique that takes advantage
-          of the psychological spacing effect, PocketOphtho aims to be the new
-          standard for clinical review apps. </ul>
-          <img border="0" alt="github" src="images/UCDavisHealth.svg" height="30" width="70"></img>
-          </div>
-          <p className="card-text">
-            Google CSSI MTV
-          </p>
-          <div>
-          <a href="www.stage-bright.appspot.com">
-          Demo
-          </a>
-          <ul> Created several small projects in Python, HTML and CSS that were
-          used to create the resource pages and establish the teleprompter on
-          stage-bright.appspot.com, a web app that anyone, especially children,
-          can use to improve their public speaking and presentation skills.
-          The web app utilizes voice recognition APIs that produces a scrolling
-          teleprompter and includes a library of linked YouTube videos and articles.  </ul>
-          </div>
+          <h4 className="card-title">PocketOphtho</h4>
+          <div className="card-content">
+            <img src="images/ophth.png" height="70" width="70"></img>
+            <div className="card-body">
+              <ul> Developed closely with members of the UC Davis School of Medicine and UC Davis Eye Center.  </ul>
+              <ul> PocketOphtho is an interactive ophthalmology review app designed
+              for residents and fellows preparing for OKAPs and written boards. With
+              the use of spaced repetition, a learning technique that takes advantage
+              of the psychological spacing effect, PocketOphtho aims to be the new
+              standard for clinical review apps.
+              </ul>
+              <img border="0" alt="github" src="images/UCDavisHealth.svg" height="30" width="70"></img>
+            </div>
           </div>
         </div>
+
+        <div className="card">
+          <h4 className="card-title">Google CSSI MTV</h4>
+          <div className="card-content">
+          <a href="www.stage-bright.appspot.com">Demo</a>
+            <div className="card-body">
+            <ul> Created several small projects in Python, HTML and CSS that were
+            used to create the resource pages and establish the teleprompter on
+            stage-bright.appspot.com, a web app that anyone, especially children,
+            can use to improve their public speaking and presentation skills.
+            The web app utilizes voice recognition APIs that produces a scrolling
+            teleprompter and includes a library of linked YouTube videos and articles.  </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     )
   }
@@ -164,31 +166,38 @@ class Project extends React.Component{
 class Game extends React.Component{
   render(){
     return (
-      <div className="Content" id="Game" onLoad="document.body.style.opacity='1'">
+      <div className="Content" id="Content" onLoad="document.body.style.opacity='1'">
+      <h3 className="content-title">Recent Game Projects:</h3>
+      <p>I dabble a bit into the Game Dev and Art scene. Here is what I have created so far. </p>
+
         <div className="card">
-          <div className="card-body">
-          <h4 className="card-title">Recent Projects:</h4>
-          <p className="card-text">
-            I dabble a bit into the Game Dev and Art scene. Here is what I have created so far.
-          </p>
-          <a href="images/welcometotheoasis.html">
-            <img border="0" alt="github" src="images/toro.png" height="70" width="70"></img>
-          </a>
-          <div>
-          <h5> The Oasis (Click fish to play)</h5>
-          <ul> A 2D scroller platformer exploring the themes of animal ethics through a tuna fish's escape
-          to freedom. Developed in a team using PICO-8.
-          </ul>
+          <h4 className="card-title">The Oasis (Click fish to play)</h4>
+          <div className="card-content">
+            <a href="images/welcometotheoasis.html">
+              <img border="0" alt="github" src="images/toro.png" height="70" width="70"></img>
+            </a>
+            <div className="card-body">
+            <ul> A 2D scroller platformer exploring the themes of animal ethics through a tuna fish's escape
+            to freedom. Developed in a team using PICO-8.
+            </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="card">
+          <h4 className="card-title">1 Year Out</h4>
+          <div className="card-content">
           <a href="https://samclee.itch.io/1-year-out">
             <img border="0" alt="github" src="images/logo.png" height="70" width="70"></img>
           </a>
-          <h5> 1 Year Out (Click)</h5>
-          <ul> A RPG adventure exploring life of 4 characters out of college. Developed in a team using LUA and FireAlpaca.
-          I don't have an itch.io.
-          </ul>
-          </div>
+            <div className="card-body">
+            <ul> A RPG adventure exploring life of 4 characters out of college. Developed in a team using LUA and FireAlpaca.
+            I don't have an itch.io.
+            </ul>
+            </div>
           </div>
         </div>
+
       </div>
     )
   }
