@@ -1,7 +1,20 @@
+body {
+    background: linear-gradient(270deg, #e17ec1, #781156, #e9b1c8, #66d2d6, #53b6d8, #39a6e0);
+    background: linear-gradient(280deg, #e17ec1, #781156, #e9b1c8, #66d2d6, #53b6d8, #39a6e0);
+    background-size: 1200% 1200%;
+
+    animation: AnimationName 15s ease infinite;
+}
+
+@keyframes AnimationName {
+    0%{background-position:57% 0%}
+    50%{background-position:44% 100%}
+    100%{background-position:57% 0%}
+}
+
 html {
   scroll-behavior: smooth;
 }
-
 
 .App {
   text-align: center;
@@ -35,11 +48,12 @@ html {
 
 body{
   font-family: 'Raleway', sans-serif;
-  background-image: url("images/background/geordanna-cordero-fields-5NE6mX0WVfQ-unsplash.jpg");
+  animation-name: AnimationName;
+  /* background-image: url("images/background/geordanna-cordero-fields-5NE6mX0WVfQ-unsplash.jpg");
   background-size:cover;
   background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0.2);
-  background-blend-mode: lighten;
+  background-blend-mode: lighten; */
 
 }
 
@@ -48,7 +62,7 @@ body{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   min-height: 100vh;
   flex-wrap: wrap;
 }

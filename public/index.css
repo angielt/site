@@ -1,9 +1,17 @@
 /* HEADER  */
+.nav_item{
+  padding: 10px;
+  padding-top: 50px;
+}
+.nav_item:hover{
+  font-weight: bold;
+}
 
 body{
   padding: 80px;
   padding-top: 10px;
   color: #7D8589;
+  color: #525252;
   font-family: 'Raleway', sans-serif;
   background-color: white;
   display: flex;
@@ -11,6 +19,9 @@ body{
   min-height: 100vh;
   padding-bottom: 0px;
   margin: 0px;
+}
+img{
+  flex:1 0 auto
 }
 
 
@@ -36,19 +47,35 @@ h1{
   margin-top:0px;
   margin-bottom: 9px;
 }
-.nav_item{
-  color: #7D8589;
-  padding: 10px;
-  padding-top: 50px;
+
+.Content{
+  background-color: red;
+  padding-bottom: 20px;
 }
-.nav_item:hover{
-  color: #7D8589;
-  font-weight: bold;
+
+.Content p {
+ text-align: left;
+ padding-left: 20px;
+}
+
+.card-title{
+  text-align: center;
 }
 
 #side_text{
   margin: 0px;
   font-size: 15px;
+}
+
+.content-title{
+  text-align:left;
+  padding-left: 20px;
+}
+
+.card-content{
+  display: flex;
+  align-items:center;
+
 }
 
 
