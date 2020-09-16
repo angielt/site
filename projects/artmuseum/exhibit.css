@@ -1,0 +1,355 @@
+/* Angie Ta ECS162 Spring 2018 */
+#header {
+  background-color: #E7AC9E;
+  color: #FFFFFF;
+  flex: auto;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.vertical{
+  display: none;
+}
+
+#large{
+  display: none;
+}
+
+#title{
+  padding-left: 30px;
+}
+
+#contents{
+  padding-left: 30px;
+  margin-top: 10px;
+  display: flex;
+  color: #6C2E2F
+}
+
+#info{
+  margin-right: 10px;
+  width: 50%;
+}
+
+.images{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-left: auto;
+  justify-content: space-around;
+}
+
+.image{
+  width: 40%;
+  margin-bottom: 10px;
+}
+
+.footer_content{
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+img{
+  margin-top: 10px;
+  width: 30vw;
+  height: 24vw;
+}
+
+h1{
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+h2{
+  font-size: 19px;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+h3{
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+h4{
+  font-size: 19px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li{
+    list-style-type: none;
+    font-size: 10px;
+    margin: 10px;
+}
+
+h5{
+  font-size: 12px;
+  font-weight: 600;
+}
+
+p{
+  font-size: 11px;
+  word-spacing: 1px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+#nav{
+  display: flex;
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+#home{
+  font-weight: 700;
+}
+
+a{
+  padding: 3px;
+}
+
+head {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+footer{
+  background-color: #E7AC9E;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.h7{
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+h6{
+  font-size: 20px;
+  margin:0;
+}
+
+#horizontal{
+  font-style: normal;
+
+}
+
+@media screen and (min-width: 1500px) {
+
+  #contents{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #large{
+    display: flex;
+    width: 60%;
+
+  }
+
+  #LargeImageId{
+    width: 200%;
+    height: auto;
+  }
+
+  #info{
+    width:20%;
+    margin: 20px;
+  }
+
+  #paragraph{
+    line-height: 2;
+    font-size: 15px;
+  }
+
+  #ClickOptions{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+  }
+
+  .caption{
+    display: none;
+  }
+
+  .LargeImage{
+    width: 60%;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  .LargeCaption{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    margin-left: 0;
+    align-items:baseline;
+  }
+
+  .h7{
+    margin-left: 10px;
+  }
+
+  .image{
+    width: 16%;
+  }
+
+  #medium-small{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+
+
+@media screen and (max-width: 700px) {
+  #nav{
+    display: flex;
+    align-content: center;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  #large{
+    display: none;
+  }
+
+  h1{
+    margin-top: 0;
+  }
+
+  h2{
+    margin-bottom:30px;
+  }
+
+  h3{
+    font-size: 21px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+
+  #header{
+    background-color: #E7AC9E;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  footer{
+    background-color: #E7AC9E;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+  }
+
+  #contents{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #6C2E2F;
+
+  }
+
+  #info{
+    margin-bottom: 20px;
+    width: 90%;
+  }
+
+  .images{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0;
+  }
+
+  .image{
+
+  }
+
+  img{
+    width: 85vw;
+    height: auto;
+  }
+
+  .caption{
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  p{
+    white-space: nowrap;
+  }
+
+  #horizontal{
+    display: none;
+  }
+
+  .vertical{
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #horizontal{
+    display: none;
+  }
+
+  #heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  .h7{
+    font-size: 20px;
+    white-space: nowrap;
+    font-style: italic;
+    margin: 10px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+
+  h6{
+    font-size: 20px;
+    white-space: nowrap;
+    margin: 10px;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  #paragraph{
+    line-height: 1.6;
+    font-size: 18px;
+  }
+
+  #caption{
+    padding: 10px;
+  }
+
+  li{
+  font-size: 15px;
+  }
+
+
+}
