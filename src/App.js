@@ -158,6 +158,18 @@ class Project extends React.Component{
           </div>
         </div>
 
+        <div className="card">
+          <h4 className="card-title">Manetti Shrem Museum Art Gallery Exhibition Demo</h4>
+          <div className="card-content">
+          <a href="projects/artmuseum/exhibit.html">Demo</a>
+            <div className="card-body">
+            <ul> Created a demo website for the Wayne Thiebaud Exhibition at the Manetti Shrem Art Museum
+                using JS Flex.
+            </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     )
   }
