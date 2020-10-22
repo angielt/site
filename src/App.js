@@ -146,7 +146,7 @@ class Project extends React.Component{
         <div className="card">
           <h4 className="card-title">Google CSSI MTV</h4>
           <div className="card-content">
-          <a href="www.stage-bright.appspot.com">Demo</a>
+          <a href="http://www.stage-bright.appspot.com">Demo</a>
             <div className="card-body">
             <ul> Created several small projects in Python, HTML and CSS that were
             used to create the resource pages and establish the teleprompter on
