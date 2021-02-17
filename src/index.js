@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import RightPage from './App';
+import Page from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<RightPage />, document.getElementById('item-right'));
+ReactDOM.render(<Page />, document.getElementById('content'));
 
 
 // If you want your app to work offline and load faster, you can change
