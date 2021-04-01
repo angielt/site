@@ -159,7 +159,7 @@ function Project(){
           <div className="card-content">
 					<div className="card-heading">
 						<h4 className="card-title">PocketOphtho</h4>
-						<a className="arrow-demo-link" href="https://github.com/angielt/Ophth" target="_blank">
+						<a className="arrow-demo-link" href="https://github.com/angielt/Ophth" target="_blank" rel="noopener noreferrer">
 							<img src="images/svg/arrow.svg" alt="Demo" height="20" width="20" />
 							</a>
 					</div>
@@ -204,7 +204,7 @@ function Project(){
 					<div className="card-content">
 						<div className="card-heading">
 							<h4 className="card-title">Google CSSI MTV</h4>
-							<a className="arrow-demo-link" href="http://www.stage-bright.appspot.com" target="_blank">
+							<a className="arrow-demo-link" href="http://www.stage-bright.appspot.com" target="_blank" rel="noopener noreferrer">
 								<img src="images/svg/arrow.svg" alt="Demo" height="20" width="20" />
 							</a>
 						</div>
@@ -333,7 +333,7 @@ function Project(){
 		return(
 			<div id='Footer'>
 				<ul>
-					Built by Angie Ta 2021 👋
+					Built by Angie Ta 2021 <span role='img' aria-label='wave-emoji'>👋</span>
 				</ul>
 				<ul>
 					Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/kirill-kazachek" title="Kirill Kazachek">Kirill Kazachek</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>

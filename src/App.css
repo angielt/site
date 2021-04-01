@@ -124,10 +124,10 @@ h1{
   font-size: 50px;
   line-height: 90%;
   color: var(--blue);
-  opacity: 50%;
+  opacity: 0.5;
 }
 #heading_bold{
-  opacity: 100%;
+  opacity: 1;
 }
 
 
