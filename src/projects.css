@@ -1,0 +1,152 @@
+
+#About .card{
+  display: flex;
+  flex-direction: row;
+  align-items:flex-start;
+
+  width:80%;
+}
+
+#Project-List{
+  display: flex;
+  justify-content: space-between;
+}
+
+.content{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 10%;
+  margin-bottom: 20%;
+}
+
+.heading h2{
+  display:inline-block;
+  margin: 20px;
+  margin-left:0px;
+  font-weight: 700;
+  color:var(--black);
+  font-size: 30px;
+}
+.heading h4{
+  display:inline-block;
+  margin: 20px;
+  font-weight: 300;
+  color:var(--black);
+  font-style: italic;
+}
+h3{
+  font-weight: 700;
+  color: var(--black);
+  margin-left: 30%;
+}
+
+
+.card{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  opacity: 0;
+  transition: all 0.8s ease;
+  color:black;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+
+}
+.card.active{
+  opacity: 1;
+}
+
+.card_ver1{
+  flex-direction: row-reverse;
+
+}
+
+.card_ver2{
+  flex-direction: row;
+}
+
+.card-heading{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-title{
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif;
+  color:var(--blue);
+}
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 400px;
+}
+.card-body{
+  padding-left: 10%;
+  line-height: 130%;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+.card-tags{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+}
+.card-tag{
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  color:#759dd1;
+  font-weight:600;
+  border: solid;
+  border-radius: 10%;
+  border-width: thin;
+  margin-right:10px;
+  padding:2px 5px 2px 5px;
+  margin-bottom: 5px;
+}
+
+.arrow-demo-link{
+  display: inline-block;
+  margin-left: 20px;
+  width: 20px;
+  height:20px;
+}
+
+.arrow-demo-link{
+  display: inline-block;
+  transform: scaleX(-1);
+}
+.demo-link{
+  opacity: 1;
+}
+.demo-link:hover{
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+@media screen and (max-width: 1300px){
+  #contact-content{
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width: 700px){
+  .card{
+    flex-direction: column;
+  }
+
+  #navbar{
+    visibility: hidden;
+  }
+
+  #grid{
+    flex-direction: column;
+  }
+
+}

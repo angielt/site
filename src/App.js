@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link} from 'react-scroll';
 import './App.css';
-import './content.css'
-import AnimateSvg from './AnimateSvg'
+import './projects.css';
+import './otherprojects.css';
+import './contact.css';
+import './footer.css';
 
 function scrollReveal() {
 	var revealPoint = 150;
@@ -24,11 +26,51 @@ function scrollReveal() {
 	}
 }
 
-
 class Page extends React.Component {
+
+	constructor(props){
+		super(props)
+		this.state = {
+			windowHeight: window.innerHeight,
+			windowWidth: window.innerWidth
+		}
+		this.handleResize = this.handleResize.bind(this);
+	}
+
+	handleResize(){
+		this.setState({
+			windowHeight: window.innerHeight,
+			windowWidth: window.innerWidth
+		});
+
+		let images = document.getElementsByClassName('resize-image-iphone');
+		for(let i = 0; i<images.length; i++){
+			if(this.state.windowWidth < 1100 && this.state.windowWidth > 600){
+					images[i].width = this.state.windowWidth*0.4;
+					images[i].height = images[i].width;
+			}
+			else if(this.state.windowWidth > 1100 ){
+				images[i].width = 400;
+				images[i].height = 400;
+			}
+		}
+
+		images = document.getElementsByClassName('resize-image-laptop');
+		for(let i = 0; i<images.length; i++){
+			if(this.state.windowWidth < 1100 && this.state.windowWidth > 600){
+					images[i].width = this.state.windowWidth*0.4;
+					images[i].height = images[i].width*0.66;
+			}
+			else if(this.state.windowWidth > 1100 ){
+				images[i].width = 450;
+				images[i].height = 300;
+			}
+		}
+	}
 
   componentDidMount(){
     window.addEventListener('scroll', scrollReveal);
+		window.addEventListener('resize',this.handleResize);
     scrollReveal();
   }
 
@@ -37,12 +79,13 @@ class Page extends React.Component {
       <div id="root">
 				<div id="topbar">
 					<div id="icon">
-						<img src="images/circle-icon.png" alt="icon" width="40" height="40" />
+						<img src="images/circle-icon.png" alt="icon" width="40px" height="40px" />
 					</div>
 					<NavBar />
 				</div>
-				<SNSBar />
         <Home addElement={this.addElement} />
+				<Contact />
+				<Footer />
       </div>
     )
   }
@@ -53,38 +96,9 @@ function NavBar(){
 		<div id="navbar" >
 			<Link className="detail_btn"  to="About" spy={true} smooth='easeOutCubic' offset={-70} duration={500} >About </Link>
 			<Link className="detail_btn"  to="Web" spy={true} smooth={true} offset={-70} duration={500} > Web & Mobile </Link>
-			<Link className="detail_btn"  to="Games" spy={true} smooth={true} offset={-70} duration={500} > Game Dev </Link>
-			<Link className="detail_btn"  to="Games" spy={true} smooth={true} offset={-70} duration={500} > Contact </Link>
-			<a href="images/AngieTa_Resume.pdf" className="detail_btn" id="toResume">Resume</a>
-		</div>
-	)
-}
-
-function SNSBar(){
-	return(
-		<div>
-		<div id="SNSBar">
-		<li>
-			<a href="https://github.com/angielt" target="_blank"  rel="noopener noreferrer">
-				<img src="images/svg/github.svg" alt="Demo" />
-			</a>
-		</li>
-		<li>
-			<a href="https://www.instagram.com/angieesque/" target="_blank"  rel="noopener noreferrer">
-				<img src="images/svg/instagram.svg" alt="Demo" />
-			</a>
-		</li>
-		<li>
-			<a href="https://github.com/angielt/Ophth" target="_blank"  rel="noopener noreferrer">
-				<img src="images/svg/email.svg" alt="Demo" />
-			</a>
-		</li>
-		<li>
-			<a href="https://www.linkedin.com/in/angie-ta/" target="_blank"  rel="noopener noreferrer">
-				<img src="images/svg/linkedin.svg" alt="Demo" />
-			</a>
-		</li>
-		</div>
+			<Link className="detail_btn"  to="OtherProjects" spy={true} smooth={true} offset={-70} duration={500} > Side Projects </Link>
+			<Link className="detail_btn"  to="Contact" spy={true} smooth={true} offset={-70} duration={500} > Contact </Link>
+			<a href="images/AngieTa_Resume.pdf" className="detail_btn small-button" >Resume</a>
 		</div>
 	)
 }
@@ -93,43 +107,41 @@ function Home(){
     return (
       <div>
         <div id="home">
-          <div id="Header">
-            <AnimateSvg />
-            <h3 className="fade-in">Welcome to my portfolio</h3>
+          <div id="header">
+            <h1>Hello!</h1>
+						<h1 id="heading_bold">I'm Angie Ta, </h1>
+						<h1>a front-end engineer intent on creating</h1>
+						<h1>seamless and charming webpages.</h1>
           </div>
-					<div id="overlay_container">
-						<div id="overlay"></div>
-						<img src="/images/toro.png" alt="pixel fish" height="100" width="100" className="image"/>
-					</div>
         </div>
-				<About />
-        <Project />
-        <Game  />
-				<Footer />
+					<About />
+        	<Project />
+					<OtherProjects />
       </div>
     )
   }
 
 function About(){
     return(
-      <div className="content" id="About"  >
-			<div className="heading">
-				<h2>About</h2>
-			</div>
-        <div className="card">
+      <div className="content" id="About">
+				<div className="card">
+					<h2 className="heading">About</h2>
           <div className="card-body">
-          <p className="card-text">
-          My name is Angie Ta. I am a web/iOS developer and recent graduate from the University of California, Davis. <br></br>
-          Some of my passions are:
-          </p>
-          <li>React/ReactNative</li>
-          <li>CS in Medicine</li>
-          <li>Linguistics/Learning Spoken Languages</li>
-          <li>Language Translation</li>
-          <li>Game Dev/Game Art</li>
+          	<p>
+          	My name is Angie Ta. I am currently a front-end software engineer seeking new opportunities.
+						I recently graduated from UC Davis with a degree in Computer Science and Engineering after
+					 	the opportunity to work closely on an iOS app with members of the UC Davis School of Medicine
+					 	and later presented at the UC Davis Eye Center conferences.</p>
+						<p>
+						Recently, I enjoy building React webpages from design to testing to publishing. I am focused on creating scalable,
+						device-friendly front-end design.</p>
           </div>
+					</div>
+					<a href="images/AngieTa_Resume.pdf" >
+						<h2 className="card-title" id="ViewResume">View Resume</h2>
+							<img className="arrow-demo-link" src="images/svg/text-document.svg" alt="Resume" height="30" width="30" />
+					</a>
         </div>
-      </div>
     )
   }
 
@@ -140,107 +152,191 @@ function Project(){
           <h2>Web & Mobile</h2>
           <h4> Projects I am proud of </h4>
         </div>
-        <div className="card">
+        <div className="card card_ver1">
 				<a className="demo-link" href="https://github.com/angielt/Ophth" target="_blank" rel="noopener noreferrer">
-					<img src="images/ophth.png" alt="Demo" height="150" width="150" />
+					<img className="resize-image-iphone" src="images/ophthoiphone.png" alt="Demo" height="400" width="400" />
 				</a>
           <div className="card-content">
+					<div className="card-heading">
 						<h4 className="card-title">PocketOphtho</h4>
+						<a className="arrow-demo-link" href="https://github.com/angielt/Ophth" target="_blank">
+							<img src="images/svg/arrow.svg" alt="Demo" height="20" width="20" />
+							</a>
+					</div>
             <div className="card-body">
               <p> Developed closely with members of the UC Davis School of Medicine and UC Davis Eye Center.  </p>
               <p> PocketOphtho is an interactive ophthalmology review app designed
               for residents and fellows preparing for OKAPs and written boards.
               </p>
-
+							<div className="card-tags">
+								<span className="card-tag"> XCode </span>
+								<span className="card-tag"> Swift </span>
+							</div>
             </div>
           </div>
         </div>
 
-        <div className="card">
+        <div className="card card_ver2">
 					<a className="demo-link" href="projects/artmuseum/exhibit.html" target="_blank">
-            <img src="images/manettishremicon.png" alt="Demo" height="200" width="250" />
+            <img className="resize-image-laptop" src="images/manettilaptop.png" alt="Demo" height="300" width="450" />
           </a>
           <div className="card-content">
-					<h4 className="card-title">Manetti Shrem Museum Gallery Exhibition Demo</h4>
+						<div className="card-heading">
+							<h4 className="card-title">Manetti Shrem Museum Exhibition Demo</h4>
+							<a className="arrow-demo-link" href="projects/artmuseum/exhibit.html" target="_blank">
+								<img src="images/svg/arrow.svg" alt="Demo" height="20" width="20" />
+								</a>
+						</div>
             <div className="card-body">
-            <p> Created a demo website for the Wayne Thiebaud Exhibition at the Manetti Shrem Art Museum
+            	<p> Created a demo website for the Wayne Thiebaud Exhibition at the Manetti Shrem Art Museum
                 using JS Flex.
-            </p>
-            </div>
+            	</p>
+							<div className="card-tags">
+								<span className="card-tag"> JavaScript </span>
+								<span className="card-tag"> HTML </span>
+								<span className="card-tag"> CSS </span>
+							</div>
+          	</div>
           </div>
         </div>
+				<div className="card">
 
-        <div className="card">
-				<a className="demo-link" href="http://www.stage-bright.appspot.com" target="_blank" rel="noopener noreferrer">
-					<img src="images/cssidemo.png" alt="Demo" height="200" width="250" />
-				</a>
-          <div className="card-content">
-						<h4 className="card-title">Google CSSI MTV</h4>
-            <div className="card-body">
-            <p> Created several small projects in Python, HTML and CSS that were
-            used to create the resource pages and establish the teleprompter on
-            stage-bright.appspot.com, a web app that anyone, especially children,
-            can use to improve their public speaking and presentation skills.
-            The web app utilizes voice recognition APIs that produces a scrolling
-            teleprompter and includes a library of linked YouTube videos and articles.  </p>
-            </div>
-          </div>
-        </div>
+					<div className="card-content">
+						<div className="card-heading">
+							<h4 className="card-title">Google CSSI MTV</h4>
+							<a className="arrow-demo-link" href="http://www.stage-bright.appspot.com" target="_blank">
+								<img src="images/svg/arrow.svg" alt="Demo" height="20" width="20" />
+							</a>
+						</div>
+						<div className="card-body">
+						<p> Created several small projects in Python, HTML and CSS that were
+						used to create the resource pages and establish the teleprompter on
+						stage-bright.appspot.com, a web app that anyone, especially children,
+						can use to improve their public speaking and presentation skills.
+						 </p>
+						 <div className="card-tags">
+							<span className="card-tag"> Google App Engine </span>
+							<span className="card-tag"> Python </span>
+							<span className="card-tag"> HTML </span>
+							<span className="card-tag"> CSS </span>
+							<span className="card-tag"> JavaScript </span>
+							<span className="card-tag"> TeleprompterAPI </span>
+						</div>
+						</div>
+					</div>
+				</div>
       </div>
     )
   }
 
-function Game(){
-    return (
-      <div id="Games" className="content">
-      <div className="heading">
-        <h2>Game Dev</h2>
-        <h4> Hobbies and side passions turned reality </h4>
-      </div>
+	function OtherProjects(){
+		return(
+			<div id="OtherProjects" className="content" >
+				<div className="heading">
+					<h2>Other Projects</h2>
+					<h4> Side passions and personal projects turned reality </h4>
+				</div>
 
-        <div className="card">
-				<a href="images/welcometotheoasis.html">
-					<img border="0" alt="github" src="images/toro.png" height="150" width="150"></img>
-				</a>
-          <div className="card-content">
-						<h4 className="card-title">The Oasis (Click fish to play)</h4>
-            <div className="card-body">
-            <p> A 2D scroller platformer exploring the themes of animal ethics through a tuna fish's escape
-            to freedom. Developed in a team using PICO-8.
-            </p>
-						<a href="https://github.com/angielt/Ophth" target="_blank" rel="noopener noreferrer"> Start</a>
-            </div>
-          </div>
+				<div id="grid">
+					<div className="grid-card">
+							<div className="card-heading">
+								<h4 className="card-title">TORO</h4>
+								<a className="arrow-demo-link" href="images/welcometotheoasis.html">
+									<img src="images/svg/arrow.svg" alt="Demo" height="15" width="15" />
+								</a>
+							</div>
+	            <div className="card-body">
+	            	<p> A 2D scroller platformer exploring the themes of animal ethics through a tuna fish's escape
+	            	to freedom. Developed in a team using PICO-8.
+	            	</p>
+								<div className="card-tags">
+	 								<span className="card-tag"> PICO-8 </span>
+	 								<span className="card-tag"> Lua </span>
+	 							</div>
+	            </div>
+	        </div>
+
+	        <div className="grid-card">
+							<div className="card-heading">
+								<h4 className="card-title">1 Year Out</h4>
+								<a className="arrow-demo-link" href="https://samclee.itch.io/1-year-out">
+									<img src="images/svg/arrow.svg" alt="Demo" height="15" width="15" />
+									</a>
+							</div>
+	            <div className="card-body">
+	            <p> Created for annual Game Jam. A RPG adventure exploring life of 4 characters out of college.
+	            I don't have an itch.io.
+	            </p>
+							<div className="card-tags">
+								<span className="card-tag"> Lua </span>
+								<span className="card-tag"> FireAlpaca </span>
+							</div>
+	          	</div>
+					</div>
+
+					<div className="grid-card">
+							<div className="card-heading">
+								<h4 className="card-title">Personal Site V1</h4>
+
+							</div>
+	            <div className="card-body">
+	            <p>
+								First digital resume using React.
+	            </p>
+							<div className="card-tags">
+								<span className="card-tag"> React </span>
+								<span className="card-tag"> Javascript </span>
+								<span className="card-tag"> HTML </span>
+								<span className="card-tag"> CSS </span>
+							</div>
+	          	</div>
+						</div>
+					</div>
+
         </div>
 
-        <div className="card">
-				<a href="https://samclee.itch.io/1-year-out">
-					<img border="0" alt="github" src="images/1yearout.png" height="100" width="150"></img>
-				</a>
-          <div className="card-content">
-					<h4 className="card-title">1 Year Out</h4>
-            <div className="card-body">
-            <p> A RPG adventure exploring life of 4 characters out of college. Developed in a team using LUA and FireAlpaca.
-            I don't have an itch.io.
-            </p>
-            </div>
-          </div>
-        </div>
+		)
+	}
 
-      </div>
-    )
-  }
+
+	function Contact(){
+		return(
+			<div id="Contact" className="content">
+			<div className="heading">
+				<h2>Contact</h2>
+			</div>
+				<div id="contact-content">
+					<div id="contact-left">
+						<ul>E-MAIL <a href="mailto:angielisata@gmail.com">angielisata@gmail.com</a></ul>
+						<ul>GITHUB <a href="https://github.com/angielt">github.com/angielt</a></ul>
+						<ul>LINKEDIN <a href="https://www.linkedin.com/in/angie-ta/">linkedin.com/in/angie-ta/</a></ul>
+
+					</div>
+					<div id="contact-right">
+						<p>
+						I'm currently seeking new opportunities. If you think
+						I would be a great fit for your team please feel free to reach out.
+						</p>
+						<p>
+						I also enjoy meeting new people! If you are interested I would love to make a new friend too! :>
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+		)
+	}
 
 
 	function Footer(){
 		return(
-			<div id='footer'>
+			<div id='Footer'>
 				<ul>
-					Built by Angie Ta 2021
+					Built by Angie Ta 2021 👋
 				</ul>
 				<ul>
-				Icons made by
-				<a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+					Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/kirill-kazachek" title="Kirill Kazachek">Kirill Kazachek</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 				</ul>
 
 			</div>
